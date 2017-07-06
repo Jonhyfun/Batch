@@ -17,6 +17,7 @@ echo %DATE% %TIME% >> u:\login.txt
 REM Firewall Authentication
 REM =======================
 
+if NOT exist "C:\Windows\System32\telnet.exe" dism /online /Enable-Feature /FeatureName:TelnetClient || pkgmgr /iu:"TelnetClient"
 telnet 192.168.46.1 259
 telnet 192.168.35.1 259
 
